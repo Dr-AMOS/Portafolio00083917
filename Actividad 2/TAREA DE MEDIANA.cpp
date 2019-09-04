@@ -1,31 +1,32 @@
 #include <iostream>
 using namespace std;
 
-
-void ejemplo(int *puntero){
-	
-	
-	cout << "num[0] = " << *puntero << endl;
-	cout << "num[1] = " << *(puntero+1) << endl;
-	cout << "num[2] = " << *(puntero+2) << endl;
-	cout << "num[3] = " << *(puntero+3) << endl;
+float getMediana(int* a, int length)
+{
+	if (length % 2)
+	{
+		return a[(int)(length / 2)];
+	}
+	return (float) (a[(int) (length / 2)] + a[(int) (length / 2) - 1]) / 2;
 }
-
 int main()
 {
-	int numeros[4];
-	numeros[0] = 3;
-	numeros[1] = 9;
-	numeros[2] = 8;
-	numeros[3] = 2;
-	
+	int b[4] = { 6,9,4,2 };
+	cout << "Arreglo Ejemplo: 6, 9, 4, 2";
+	cout << "\nMediana: " << getMediana(b, 4);
 
-	
-	ejemplo(numeros);
-}
-float mediana(int *puntero, int tamano){
-	
-	for(int i = 0; i<tamano; i++);
+	int length = 0;
+	cout << "\n\nTamano del arreglo (maximo 100): ";
+	cin >> length;
+	if (length > 100) length = 100;
 
-	return -1;
+	int a[100];
+	cout << "Elementos\n";
+	for (int i = 0; i < length; i++)
+	{
+		cout << i << ":\t";
+		cin >> a[i];
+	}
+
+	cout << "la Mediana es: " << getMediana(a, length);
 }

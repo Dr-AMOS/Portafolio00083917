@@ -1,28 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int buscar(int x, int low, int high, int mid){
-	if (low>high)
-		return (-1);
-	
-	mid = (low+high)/2;
-	if(x==a[mid])
-		return (mid);
-	
-	if(x<a[mid])
-		return buscar(x, low, mid-1);
-	else
-		return buscar(x, mid+1, high);
+int find(int* a, int s, int f, int q)
+{
+	int mid = (s + f) / 2;
+	if (s > f) return -1;
+	if (a[mid] == q) return mid;
+	if (a[mid] > q) return find(a, s, mid - 1, q);
+	if (a[mid] < q) return find(a, mid + 1, f, q);
 }
 
-int main (){
-	
-	int x = {1,3,4,5,17,18,31,33};
-     
-	cout<<"Digite un numero";
-	cin<<x;
-
-
+int main()
+{
+	int a[8] = { 2,7,9, 10, 17, 18, 33, 42 };
+	int query;
+	cout << "numero que se busca: ";
+	cin >> query;
+	cout << "Posicion en el arreglo (-1 = no se encontro): " << find(a, 0, 7, query);
 }
 	
 
