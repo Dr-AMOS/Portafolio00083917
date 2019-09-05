@@ -1,0 +1,42 @@
+> Obtener el segundo elemento de una pila, de arriba (top) hacia
+abajo; dejando la pila sin sus dos elementos de arriba.
+
+
+s= initialize 
+
+if(empty(s))
+	return false
+
+pop(s)
+if(empty(s))
+	return false
+i = pop(s)
+
+
+
+>Obtenga el segundo elemento de una pila, de arriba (top) hacia
+abajo; dejando la pila intacta.
+
+
+
+
+>Obtenga el elemento que se encuentra al fondo de la pila, dejando
+la pila vacia
+
+
+voidVaciarPila
+
+if(empty(s)){
+
+valid = true 
+
+break
+}
+
+i= pop (s) 
+if(i != ' ') {
+
+valid = false
+
+break
+}
