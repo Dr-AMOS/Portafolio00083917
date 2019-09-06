@@ -1,31 +1,36 @@
-#include <iostream>
+#include<iostream>
+
 using namespace std;
 
-double **crear_matriz(int n,int m){
-	ptr = new double*[n];
-	
-	for(int i=0; i<n; i++)
-	ptr[i] = new double[m];
-	
-	return ptr;
-}
+struct numeros{
+  int real1;
+  int real2;
+  int complejo1;
+  int complejo2;
+  int sumareal;
+  int sumacompleja;
+};
+
 int main(){
-	
-	int n, int m;
-	ptr =  crear_ matriz
-n=5
-m=5
+  struct numeros suma;
 
-double **ptr
-ptr= new double*[n];
+  cout<<"introduzca la parte real de ambos complejos"<<endl;
+  cout<<"Parte Real:  ";
+  cin>>suma.real1;
+  cout<<"Parte Real 2:  ";
+  cin>>suma.real2;
 
-for(int i=0; i<n, i++)
-for(int j=0; j<m; j++)
-cin>> ptr[i][j;
+  cout<<"introduzca la parte imaginaria de ambos complejos"<<endl;
+  cout<<"Parte Imaginaria:  ";
+  cin>>suma.complejo1;
+  cout<<"Parte imaginaria 2:  ";
+  cin>>suma.complejo2;
 
-for (int i=0; i<n; i++ ){
-	for (int j=0; j<m;j++)
-	cout<<ptr[i][j]<<"";
-	cout<<endl;
-}
+
+  suma.sumareal=suma.real1+suma.real2;
+  suma.sumacompleja=suma.complejo1+suma.complejo2;
+
+  cout<<"El resultado es: "<<suma.sumareal<<"+"<<suma.sumacompleja<<"j"<<endl;
+
+  return 0;
 }
