@@ -14,13 +14,13 @@ struct numeros{
 int main(){
   struct numeros suma;
 
-  cout<<"introduzca la parte real de ambos complejos"<<endl;
-  cout<<"Parte Real:  ";
+  cout<<"introduzca la parte real : "<<endl;
+  cout<<"Parte Real 1:  ";
   cin>>suma.real1;
   cout<<"Parte Real 2:  ";
   cin>>suma.real2;
 
-  cout<<"introduzca la parte imaginaria de ambos complejos"<<endl;
+  cout<<"introduzca la parte imaginaria "<<endl;
   cout<<"Parte Imaginaria:  ";
   cin>>suma.complejo1;
   cout<<"Parte imaginaria 2:  ";
