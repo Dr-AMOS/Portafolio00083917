@@ -48,43 +48,61 @@ float dejandopilavacia(Pila *s){
 	}
 }
 
-float dejandopilaintacta(Pila *s){
-	if(empty(s)){
+//Funcion para otener el valor de la pila dejandola vacia
+float obtenerFondo(PilaO* s){
+
+	if (empty(s))
 		return -1;
-	}
-	else{
-		float b = 0;
-		int a=0;
-		a=(s->top);
-		float arreglo[a+1];
-		for(int i=0;i<a+1;i++){
-			if(empty(s)){
-				return -1;
-			}
-			else{
-				pop(s, &b);
-				arreglo[(a+1)-i]=b;
-			}
-		}
-		for(int i=1;i<a+1;i++){
-			push(s, arreglo[i]);
-		}
-		return b;
-	}
+	float a = 0, b = 0;
+	pop(s, &b);
+	if (empty(s))
+		return -1;
+	pop(s, &a);
+	push(s, b);
+	push(s, a);
+	
+
+	return a;
 }
 
+float FondoNormal(PilaO *pilaA) {
+	PilaO* pilaB;
+	initialize(pilaB);
+
+	float valores = 0;
+
+	while (!empty(pilaA)) {
+		pop(pilaA, &valores);
+		push(&pilaB, valores);
+	}
+
+	float fondo = valores;
+
+	while (!empty(pilaB)){
+		pop(&pilaB, &valores);
+		push(pilaA, valores);
+	}
+
+	return fondo;
+}
+
+
 int main()
+
 {
-	Pila unaPila;
-	initialize(&unaPila);
 
-	push(&unaPila, 1.2);
-	push(&unaPila, 3.4);
-	push(&unaPila, 5.6);
+	PilaO unapilao;
+	initialize(&unapilao);
 
-	float primero = dejandopilaintacta(&unaPila);
-	cout << "Ultimo elemento de la pila (dejandola intacta): " << primero << endl;
 
-	float segundo = dejandopilavacia(&unaPila);
-	cout << "Ultimo elemento de la pila (dejandola vacia): " << segundo << endl;
+	push(&unapilao, 1.2);
+	push(&unapilao, 3.4);
+	
+
+
+	float fondo = obtenerFondo(&unapilao);
+	cout << "Fondo:" << fondo << endl;
+
+
+
 }
