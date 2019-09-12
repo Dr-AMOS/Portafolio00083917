@@ -32,16 +32,16 @@ int main(){
 
     for(int i=0;i<5;i++){
         suma=0;
-        cout<<"Digite el nombre del continente "<<i+1<<" ";getline(cin,continentes[i].nombre);
+        cout<<"Digite el nombre del continente: "<<i+1<<" ";getline(cin,continentes[i].nombre);
         for(int j=0;j<5;j++){
-            cout<<"Digite el nombre del pais "<<j+1<<" ";cin>>continentes[i].pais[j].nombre;
-            cout<<"Digite la capital del pais "<<j+1<<" ";cin>>continentes[i].pais[j].capital;
-            cout<<"Digite el numero de habitantes del pais "<<j+1<<" ";cin>>continentes[i].pais[j].habitantes;
-            cout<<"Digite el promedio de la edad de los habitantes del pais "<<j+1<<" ";cin>>continentes[i].pais[j].promedio_edad;
+            cout<<"Digite el nombre del pais: "<<j+1<<" ";cin>>continentes[i].pais[j].nombre;
+            cout<<"Digite la capital del pais: "<<j+1<<" ";cin>>continentes[i].pais[j].capital;
+            cout<<"Digite el numero de habitantes del pais: "<<j+1<<" ";cin>>continentes[i].pais[j].habitantes;
+            cout<<"Digite el promedio de la edad de los habitantes del pais: "<<j+1<<" ";cin>>continentes[i].pais[j].promedio_edad;
             suma+=continentes[i].pais[j].habitantes;
         }
         cin.clear();cin.ignore(1000,'\n');
-        cout<<"La suma de población del continente "<<continentes[i].nombre<< " es de "<<suma<<endl<<endl;
+        cout<<"La suma de poblaciÃ³n del continente "<<continentes[i].nombre<< " es de "<<suma<<endl<<endl;
 
 
     }
@@ -66,7 +66,7 @@ int main(){
             }
     }
     pro=y/25;
-    cout<<"La capital con más habitantes es "<<continentes[a].pais[b].capital<<" con "<<aux<<" Habitantes"<<endl;
-    cout<<endl<<"El promedio de edad mundial es "<<pro<<endl;
+    cout<<"La capital con mÃ¡s habitantes es: "<<continentes[a].pais[b].capital<<" con "<<aux<<" Habitantes"<<endl;
+    cout<<endl<<"El promedio de edad mundial es: "<<pro<<endl;
     return 0;
 }

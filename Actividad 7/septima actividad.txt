@@ -24,19 +24,15 @@ abajo; dejando la pila intacta.
 la pila vacia
 
 
-voidVaciarPila
-
-if(empty(s)){
-
-valid = true 
-
-break
+pila p = (valores de pila predeterminada)
+valor = 0
+valido = false
+while (!empty(temp))
+{
+	valor = pop(p)
+	valido = true
 }
-
-i= pop (s) 
-if(i != ' ') {
-
-valid = false
-
-break
-}
+if (valido)
+	"Valor del miembro es " valor
+else
+	"Miembro no existe"
