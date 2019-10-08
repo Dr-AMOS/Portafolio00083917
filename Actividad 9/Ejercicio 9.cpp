@@ -1,61 +1,50 @@
-//dejar pila vacia
+//actividad 8 reconstruida //
 #include <iostream>
+#include <stack>
+
 using namespace std;
 
-float obtenerFondo(PilaO *s);{
+int main() {
+    int a=0;
+    stack <float> p;
+    p.push(1.2);
+    p.push(3.4);
+    p.push(5.6);
 
-	if (empty(s))
-		return -1;
-	float a = 0, b = 0;
-	pop(s, &b);
-	if (empty(s))
-		return -1;
-	pop(s, &a);
-	push(s, b);
-	push(s, a);
-	
+    if(p.empty()){
+        cout<<-1;
+    }
+    else{
+        a=p.size();
+        float arreglo[a];
+        for(int i=0;i<a;i++){
+            if(p.empty()){
+                cout<<-1;
+            }
+            else{
+                arreglo[a-1-i]=p.top();
+                p.pop();
+            }
+        }
+        for(int i=0;i<a;i++){
+            p.push(arreglo[i]);
+        }
+        cout<<"Ultimo elemento de la pila (dejandola pila intacta): "<<arreglo[0]<<endl;
+    }
 
-	return a;
-}
-
-float FondoNormal(PilaO *pilaA) {
-	PilaO* pilaB;
-	initialize(pilaB);
-
-	float valores = 0;
-
-	while (!empty(pilaA)) {
-		pop(pilaA, &valores);
-		push(&pilaB, valores);
-	}
-
-	float fondo = valores;
-
-	while (!empty(pilaB)){
-		pop(&pilaB, &valores);
-		push(pilaA, valores);
-	}
-
-	return fondo;
-}
-
-
-int main()
-
-{
-
-	PilaO unapilao;
-	initialize(&unapilao);
-
-
-	push(&unapilao, 1.2);
-	push(&unapilao, 3.4);
-	
-
-
-	float fondo = obtenerFondo(&unapilao);
-	cout << "Fondo:" << fondo << endl;
-
-
-
+    if(p.empty()){
+        cout<<-1;
+    }
+    else{
+        for(int i=0;i<p.size()+1;i++){
+            if(p.empty()){
+                cout<<-1;
+            }
+            else{
+                p.pop();
+            }
+        }
+        cout<<"Ultimo elemento de la pila (dejandola vacia): "<<p.top();
+    }
+    return 0;
 }
